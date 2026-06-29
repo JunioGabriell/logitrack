@@ -1,0 +1,21 @@
+server:
+  port: 8084
+
+aws:
+  endpoint: http://localhost:4566
+  region: us-east-1
+  accessKey: test
+  secretKey: test
+  sqs:
+    queue-url: http://localhost:4566/000000000000/tracking-queue
+  dynamodb:
+    table-name: tracking
+
+jwt:
+  secret: logitrack-secret-key-2024-muito-segura
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics

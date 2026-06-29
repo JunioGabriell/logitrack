@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/deliverydb
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: delivery-grupo
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring.json.trusted.packages: "*"
+
+jwt:
+  secret: logitrack-secret-key-2024-muito-segura
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics
