@@ -1,7 +1,6 @@
 package com.ebac.order_service.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
