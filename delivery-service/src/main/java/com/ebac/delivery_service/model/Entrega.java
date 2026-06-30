@@ -9,7 +9,6 @@ public class Entrega {
 
     @Id
     private String id;
-
     private Long pedidoId;
     private String clienteEmail;
     private String descricao;
@@ -19,6 +18,12 @@ public class Entrega {
 
     private LocalDateTime criadoEm;
     private LocalDateTime atualizadoEm;
+
+    public enum Status {
+        AGUARDANDO, ATRIBUIDO, EM_TRANSITO, ENTREGUE, CANCELADO
+    }
+
+    public Entrega() {}
 
     public Entrega(Long pedidoId, String clienteEmail, String descricao, String endereco) {
         this.pedidoId = pedidoId;
@@ -30,34 +35,30 @@ public class Entrega {
         this.atualizadoEm = LocalDateTime.now();
     }
 
-    public enum Status {
-        AGUARDANDO, ATRIBUIDO, EM_TRANSITO, ENTREGUE, CANCELADO
-    }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public String getId() {return id;}
-    public void setId(String id) {this.id = id;}
+    public Long getPedidoId() { return pedidoId; }
+    public void setPedidoId(Long pedidoId) { this.pedidoId = pedidoId; }
 
-    public Long getPedidoId() {return pedidoId;}
-    public void setPedidoId(Long pedidoId) {this.pedidoId = pedidoId;}
+    public String getClienteEmail() { return clienteEmail; }
+    public void setClienteEmail(String clienteEmail) { this.clienteEmail = clienteEmail; }
 
-    public String getClienteEmail() {return clienteEmail;}
-    public void setClienteEmail(String clienteEmail) {this.clienteEmail = clienteEmail;}
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public String getDescricao() {return descricao;}
-    public void setDescricao(String descricao) {this.descricao = descricao;}
+    public String getEndereco() { return endereco; }
+    public void setEndereco(String endereco) { this.endereco = endereco; }
 
-    public String getEndereco() {return endereco;}
-    public void setEndereco(String endereco) {this.endereco = endereco;}
+    public String getDriverEmail() { return driverEmail; }
+    public void setDriverEmail(String driverEmail) { this.driverEmail = driverEmail; }
 
-    public String getDriverEmail() {return driverEmail;}
-    public void setDriverEmail(String driverEmail) {this.driverEmail = driverEmail;}
+    public Status getStatus() { return status; }
+    public void setStatus(Status status) { this.status = status; }
 
-    public Status getStatus() {return status;}
-    public void setStatus(Status status) {this.status = status;}
+    public LocalDateTime getCriadoEm() { return criadoEm; }
+    public void setCriadoEm(LocalDateTime criadoEm) { this.criadoEm = criadoEm; }
 
-    public LocalDateTime getCriadoEm() {return criadoEm;}
-    public void setCriadoEm(LocalDateTime criadoEm) {this.criadoEm = criadoEm;}
-
-    public LocalDateTime getAtualizadoEm() {return atualizadoEm;}
-    public void setAtualizadoEm(LocalDateTime atualizadoEm) {this.atualizadoEm = atualizadoEm;}
+    public LocalDateTime getAtualizadoEm() { return atualizadoEm; }
+    public void setAtualizadoEm(LocalDateTime atualizadoEm) { this.atualizadoEm = atualizadoEm; }
 }

@@ -4,10 +4,10 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://mongodb:27017/deliverydb
+      uri: ${MONGODB_URI}
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_SERVERS}
     consumer:
       group-id: delivery-grupo
       auto-offset-reset: earliest
@@ -17,7 +17,7 @@ spring:
       spring.json.trusted.packages: "*"
 
 jwt:
-  secret: logitrack-secret-key-2024-muito-segura
+  secret: ${JWT_SECRET}
 
 management:
   endpoints:
