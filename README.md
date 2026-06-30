@@ -115,6 +115,26 @@ http://localhost:{porta}/swagger-ui/index.html
 
 ---
 
+## ⚙️ Variáveis de ambiente
+
+As variáveis são configuradas automaticamente pelo `docker-compose.yml`. Para rodar localmente fora do Docker, configure:
+
+| Variável | Descrição | Exemplo |
+|---|---|---|
+| `JWT_SECRET` | Chave secreta para assinar o JWT | `logitrack-secret-key` |
+| `DB_USERNAME` | Usuário do MySQL | `root` |
+| `DB_PASSWORD` | Senha do MySQL | `root` |
+| `KAFKA_SERVERS` | Endereço do Kafka | `localhost:9092` |
+| `MONGODB_URI` | URI do MongoDB | `mongodb://localhost:27017/deliverydb` |
+| `AWS_ENDPOINT` | Endereço do LocalStack | `http://localhost:4566` |
+| `AWS_REGION` | Região AWS | `us-east-1` |
+| `AWS_ACCESSKEY` | Access key do LocalStack | `test` |
+| `AWS_SECRETKEY` | Secret key do LocalStack | `test` |
+| `AWS_SQS_QUEUE_URL` | URL da fila SQS | `http://localhost:4566/000000000000/tracking-queue` |
+| `AWS_DYNAMODB_TABLE` | Nome da tabela DynamoDB | `tracking` |
+
+---
+
 ## ▶️ Como executar
 
 ### Pré-requisitos
