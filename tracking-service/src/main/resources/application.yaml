@@ -2,17 +2,17 @@ server:
   port: 8084
 
 aws:
-  endpoint: http://localhost:4566
-  region: us-east-1
-  accessKey: test
-  secretKey: test
+  endpoint: ${AWS_ENDPOINT}
+  region: ${AWS_REGION}
+  access-key: ${AWS_ACCESSKEY}
+  secret-key: ${AWS_SECRETKEY}
   sqs:
-    queue-url: http://localhost:4566/000000000000/tracking-queue
+    queue-url: ${AWS_SQS_QUEUE_URL}
   dynamodb:
-    table-name: tracking
+    table-name: ${AWS_DYNAMODB_TABLE}
 
 jwt:
-  secret: logitrack-secret-key-2024-muito-segura
+  secret: ${JWT_SECRET}
 
 management:
   endpoints:
